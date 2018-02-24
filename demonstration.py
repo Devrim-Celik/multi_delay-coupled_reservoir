@@ -48,8 +48,8 @@ def NARMA10_TEST(N=800, train_cycles=4000, test_cycles=1000, warmup_cycles=100):
     # plot
     plt.figure("Prediction Plot")
     plt.title("Prediction of NARMA10 Series with NRMSE {0:.4f}".format(NRMSE))
-    plt.plot(y_consider, color="blue", linewidth=2, label="real")
-    plt.plot(yhat_consider, color="red", linewidth=0.5, linestyle='-', label="prediction")
+    plt.plot(y_consider, color="blue", linewidth=2, label="NARMA10")
+    plt.plot(yhat_consider, color="red", linewidth=0.5, linestyle='-', label="Model Prediction")
     plt.xlabel("Timesteps")
     plt.legend()
     plt.savefig("./images/prediction_plot.png")
@@ -67,4 +67,4 @@ if (__name__=="__main__"):
         os.mkdir('./images')
 
     nrmse = NARMA10_TEST()
-    print(nrmse)
+    print("[*] NRMSE = {0:.4f}!".format(nrmse))
