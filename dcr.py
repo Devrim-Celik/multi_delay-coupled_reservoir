@@ -128,7 +128,7 @@ class MultiDelayCoupledRC():
                 VN[t] = kx * (VN[t-1] + ff[t-1]) + ff[t]
 
             # calculate reservoir
-            R[i] = b * (self.theta/2 * f0 * phi0) + self.theta/2 + VN
+            R[i] = b * (self.theta/2 * f0 + phi0) + self.theta/2 * VN
 
             # update
             f0 = ff[self.N-1]
